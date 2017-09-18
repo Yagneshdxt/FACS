@@ -1,0 +1,136 @@
+﻿@model DbAccess.Patient_Master
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Patient Master</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.PatientNoFromClient)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PatientNoFromClient)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Patient_Last_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Patient_Last_Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Patient_First_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Patient_First_Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Patient_Middle_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Patient_Middle_Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Patient_SocialSecurity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Patient_SocialSecurity)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Admit_Date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Admit_Date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Discharge_Date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Discharge_Date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Patient_Bill_Amount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Patient_Bill_Amount)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Patient_Insurance_Bill_Amount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Patient_Insurance_Bill_Amount)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Total_Charges)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Total_Charges)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Placement_Date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Placement_Date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsActive)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsActive)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsClosed)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsClosed)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Closed_Date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Closed_Date)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

@@ -1,0 +1,99 @@
+﻿@model IEnumerable<DbAccess.User_Master>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.User_Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First_Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Last_Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Employee_Code)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Phone_Extention)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Created_By_User)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Updated_By_User)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Create_Dt_Time)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Update_Dt_Time)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IsActive)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.User_Type_Master.User_Type)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.User_Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.First_Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Last_Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Employee_Code)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Phone_Extention)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Created_By_User)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Updated_By_User)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Create_Dt_Time)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Update_Dt_Time)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IsActive)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.User_Type_Master.User_Type)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.User_Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.User_Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.User_Id })
+        </td>
+    </tr>
+}
+
+</table>

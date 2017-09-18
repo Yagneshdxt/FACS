@@ -1,0 +1,33 @@
+﻿@model DbAccess.Address_Sub_Type_Master
+
+@{
+    ViewBag.Title = "Details Address Sub Type";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Address Sub Type</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Address_Sub_Type)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Address_Sub_Type)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Address_Type_Master.Address_Type)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Address_Type_Master.Address_Type)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Address_Sub_Type_Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

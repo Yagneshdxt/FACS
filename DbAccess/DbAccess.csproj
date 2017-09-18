@@ -1,0 +1,162 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A86D84B8-4B51-4D68-8CD9-9154D6055E0A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DbAccess</RootNamespace>
+    <AssemblyName>DbAccess</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Address_Master.cs">
+      <DependentUpon>fac_entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Address_Sub_Type_Master.cs">
+      <DependentUpon>fac_entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Address_Type_Master.cs">
+      <DependentUpon>fac_entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Client_Group_Master.cs">
+      <DependentUpon>fac_entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Client_Master.cs">
+      <DependentUpon>fac_entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contact_Master.cs">
+      <DependentUpon>fac_entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contact_Sub_Type_Master.cs">
+      <DependentUpon>fac_entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contact_Type_Master.cs">
+      <DependentUpon>fac_entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataTableHelper.cs" />
+    <Compile Include="Disposition_Master.cs">
+      <DependentUpon>fac_entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="fac_entity.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>fac_entity.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="fac_entity.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>fac_entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="fac_entity.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>fac_entity.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="MetaData.cs" />
+    <Compile Include="PartialClasses.cs" />
+    <Compile Include="Patient_Master.cs">
+      <DependentUpon>fac_entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Patient_Receivables_Info.cs">
+      <DependentUpon>fac_entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Patient_Status.cs">
+      <DependentUpon>fac_entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Patient_Treatments.cs">
+      <DependentUpon>fac_entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Patient_Type_Master.cs">
+      <DependentUpon>fac_entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Payer_Master.cs">
+      <DependentUpon>fac_entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Payment.cs">
+      <DependentUpon>fac_entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="User_Master.cs">
+      <DependentUpon>fac_entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="User_Type_Master.cs">
+      <DependentUpon>fac_entity.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <EntityDeploy Include="fac_entity.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>fac_entity.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="fac_entity.edmx.diagram">
+      <DependentUpon>fac_entity.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fac_entity.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>fac_entity.edmx</DependentUpon>
+      <LastGenOutput>fac_entity.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="fac_entity.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>fac_entity.edmx</DependentUpon>
+      <LastGenOutput>fac_entity.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

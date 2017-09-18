@@ -1,0 +1,76 @@
+﻿@model DbAccess.Payment
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Payment</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Payment_Index)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Payment_Index)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Payment_Type)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Payment_Type)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Payment_Amount)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Payment_Amount)
+        </dd>
+
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Payment_Date)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Payment_Date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Payment_Post_Date)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Payment_Post_Date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Payment_Details)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Payment_Details)
+        </dd>
+
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsActive)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.IsActive)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Revenue)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Revenue)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

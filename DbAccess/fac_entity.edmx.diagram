@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="4c10daa765b64d27b1cd8355aa1ae9cb" Name="Diagram1">
+        <EntityTypeShape EntityType="FACSDBModel.Client_Group_Master" Width="1.5" PointX="9.75" PointY="6.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="FACSDBModel.Client_Master" Width="1.5" PointX="12" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="FACSDBModel.Contact_Type_Master" Width="1.5" PointX="2.25" PointY="12.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="FACSDBModel.Disposition_Master" Width="1.5" PointX="8.375" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="FACSDBModel.Patient_Master" Width="1.5" PointX="3.625" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="FACSDBModel.Payer_Master" Width="1.5" PointX="0.75" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="FACSDBModel.User_Master" Width="1.5" PointX="12" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="FACSDBModel.User_Type_Master" Width="1.5" PointX="10.125" PointY="4" IsExpanded="true" />
+        <AssociationConnector Association="FACSDBModel.FK_Client_Master_Client_Group_Master" ManuallyRouted="false" />
+        <AssociationConnector Association="FACSDBModel.FK_User_Master_User_Type_Master" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="FACSDBModel.Contact_Sub_Type_Master" Width="1.5" PointX="2.5" PointY="15.375" />
+        <AssociationConnector Association="FACSDBModel.FK_Contact_Sub_Type_Master_Contact_Type_Master" />
+        <EntityTypeShape EntityType="FACSDBModel.Contact_Master" Width="1.5" PointX="0.5" PointY="12.125" />
+        <AssociationConnector Association="FACSDBModel.FK_Contact_Master_Contact_Sub_Type_Master" />
+        <AssociationConnector Association="FACSDBModel.FK_Contact_Master_Contact_Type_Master" />
+        <EntityTypeShape EntityType="FACSDBModel.Address_Master" Width="1.5" PointX="9.125" PointY="10.875" />
+        <EntityTypeShape EntityType="FACSDBModel.Address_Sub_Type_Master" Width="1.5" PointX="6.625" PointY="11.125" />
+        <EntityTypeShape EntityType="FACSDBModel.Address_Type_Master" Width="1.5" PointX="4.375" PointY="11.25" />
+        <AssociationConnector Association="FACSDBModel.FK_Address_Master_ToTable" />
+        <AssociationConnector Association="FACSDBModel.FK_Address_Sub_Type_Master_Address_Type_Master" />
+        <EntityTypeShape EntityType="FACSDBModel.Patient_Type_Master" Width="1.5" PointX="1.25" PointY="1.375" />
+        <EntityTypeShape EntityType="FACSDBModel.Patient_Receivables_Info" Width="1.5" PointX="3.625" PointY="1.25" />
+        <AssociationConnector Association="FACSDBModel.FK_Patient_Receivables_Info_Patient_master" />
+        <AssociationConnector Association="FACSDBModel.FK_Patient_Receivables_Info_Patient_Type_Master" />
+        <AssociationConnector Association="FACSDBModel.FK_Patient_Receivables_Info_Payer_Master" />
+        <EntityTypeShape EntityType="FACSDBModel.Patient_Treatments" Width="1.5" PointX="5.875" PointY="7.875" />
+        <AssociationConnector Association="FACSDBModel.FK_Patient_Treatments_ToTable" />
+        <EntityTypeShape EntityType="FACSDBModel.Patient_Status" Width="1.5" PointX="6" PointY="0.75" />
+        <AssociationConnector Association="FACSDBModel.FK_Patient_Status_Contact_Master" />
+        <AssociationConnector Association="FACSDBModel.FK_Patient_Status_Disposition_Master" />
+        <AssociationConnector Association="FACSDBModel.FK_Patient_Status_Patient_Master" />
+        <EntityTypeShape EntityType="FACSDBModel.Payment" Width="1.5" PointX="1.125" PointY="8" />
+        <AssociationConnector Association="FACSDBModel.FK_Payments_ToTable" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

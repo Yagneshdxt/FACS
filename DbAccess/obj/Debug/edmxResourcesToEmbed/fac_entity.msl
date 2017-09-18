@@ -1,0 +1,300 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="FACSDBModelStoreContainer" CdmEntityContainer="FACSDBEntities">
+    <EntitySetMapping Name="Client_Group_Master">
+      <EntityTypeMapping TypeName="FACSDBModel.Client_Group_Master">
+        <MappingFragment StoreEntitySet="Client_Group_Master">
+          <ScalarProperty Name="Hospital_Group_Id" ColumnName="Hospital_Group_Id" />
+          <ScalarProperty Name="Hospital_Group_Name" ColumnName="Hospital_Group_Name" />
+          <ScalarProperty Name="Hospital_Group_Code" ColumnName="Hospital_Group_Code" />
+          <ScalarProperty Name="Created_By_User" ColumnName="Created_By_User" />
+          <ScalarProperty Name="Updated_By_User" ColumnName="Updated_By_User" />
+          <ScalarProperty Name="Create_Dt_Time" ColumnName="Create_Dt_Time" />
+          <ScalarProperty Name="Update_Dt_Time" ColumnName="Update_Dt_Time" />
+          <ScalarProperty Name="Commission_Percentage" ColumnName="Commission_Percentage" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Client_Master">
+      <EntityTypeMapping TypeName="FACSDBModel.Client_Master">
+        <MappingFragment StoreEntitySet="Client_Master">
+          <ScalarProperty Name="Hospital_Id" ColumnName="Hospital_Id" />
+          <ScalarProperty Name="Hospital_Name" ColumnName="Hospital_Name" />
+          <ScalarProperty Name="Hospital_Group_Id" ColumnName="Hospital_Group_Id" />
+          <ScalarProperty Name="Hospital_Speciality" ColumnName="Hospital_Speciality" />
+          <ScalarProperty Name="Number_Of_Beds" ColumnName="Number_Of_Beds" />
+          <ScalarProperty Name="ICCU_Available" ColumnName="ICCU_Available" />
+          <ScalarProperty Name="Visitor_Hours" ColumnName="Visitor_Hours" />
+          <ScalarProperty Name="Create_By_User" ColumnName="Create_By_User" />
+          <ScalarProperty Name="Updated_By_User" ColumnName="Updated_By_User" />
+          <ScalarProperty Name="Create_Dt_Time" ColumnName="Create_Dt_Time" />
+          <ScalarProperty Name="Update_Dt_Time" ColumnName="Update_Dt_Time" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Contact_Type_Master">
+      <EntityTypeMapping TypeName="FACSDBModel.Contact_Type_Master">
+        <MappingFragment StoreEntitySet="Contact_Type_Master">
+          <ScalarProperty Name="Contact_Type_Id" ColumnName="Contact_Type_Id" />
+          <ScalarProperty Name="Contact_Type" ColumnName="Contact_Type" />
+          <ScalarProperty Name="Created_By_User" ColumnName="Created_By_User" />
+          <ScalarProperty Name="Updated_By_User" ColumnName="Updated_By_User" />
+          <ScalarProperty Name="Create_Dt_Time" ColumnName="Create_Dt_Time" />
+          <ScalarProperty Name="Update_Dt_Time" ColumnName="Update_Dt_Time" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Disposition_Master">
+      <EntityTypeMapping TypeName="FACSDBModel.Disposition_Master">
+        <MappingFragment StoreEntitySet="Disposition_Master">
+          <ScalarProperty Name="Disposition_Id" ColumnName="Disposition_Id" />
+          <ScalarProperty Name="Disposition" ColumnName="Disposition" />
+          <ScalarProperty Name="Disposition_Group" ColumnName="Disposition_Group" />
+          <ScalarProperty Name="Created_By_User" ColumnName="Created_By_User" />
+          <ScalarProperty Name="Updated_By_User" ColumnName="Updated_By_User" />
+          <ScalarProperty Name="Create_Dt_Time" ColumnName="Create_Dt_Time" />
+          <ScalarProperty Name="Update_Dt_Time" ColumnName="Update_Dt_Time" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Patient_Master">
+      <EntityTypeMapping TypeName="FACSDBModel.Patient_Master">
+        <MappingFragment StoreEntitySet="Patient_Master">
+          <ScalarProperty Name="Patient_Id" ColumnName="Patient_Id" />
+          <ScalarProperty Name="PatientNoFromClient" ColumnName="PatientNoFromClient" />
+          <ScalarProperty Name="Patient_Last_Name" ColumnName="Patient_Last_Name" />
+          <ScalarProperty Name="Patient_First_Name" ColumnName="Patient_First_Name" />
+          <ScalarProperty Name="Patient_Middle_Name" ColumnName="Patient_Middle_Name" />
+          <ScalarProperty Name="Patient_SocialSecurity" ColumnName="Patient_SocialSecurity" />
+          <ScalarProperty Name="Hospital_Id" ColumnName="Hospital_Id" />
+          <ScalarProperty Name="Admit_Date" ColumnName="Admit_Date" />
+          <ScalarProperty Name="Discharge_Date" ColumnName="Discharge_Date" />
+          <ScalarProperty Name="Patient_Bill_Amount" ColumnName="Patient_Bill_Amount" />
+          <ScalarProperty Name="Patient_Insurance_Bill_Amount" ColumnName="Patient_Insurance_Bill_Amount" />
+          <ScalarProperty Name="Total_Charges" ColumnName="Total_Charges" />
+          <ScalarProperty Name="Placement_Date" ColumnName="Placement_Date" />
+          <ScalarProperty Name="Created_By_User" ColumnName="Created_By_User" />
+          <ScalarProperty Name="Updated_By_User" ColumnName="Updated_By_User" />
+          <ScalarProperty Name="Create_Dt_Time" ColumnName="Create_Dt_Time" />
+          <ScalarProperty Name="Update_Dt_Time" ColumnName="Update_Dt_Time" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="IsClosed" ColumnName="IsClosed" />
+          <ScalarProperty Name="Closed_Date" ColumnName="Closed_Date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Payer_Master">
+      <EntityTypeMapping TypeName="FACSDBModel.Payer_Master">
+        <MappingFragment StoreEntitySet="Payer_Master">
+          <ScalarProperty Name="Payer_Id" ColumnName="Payer_Id" />
+          <ScalarProperty Name="Payer_Name" ColumnName="Payer_Name" />
+          <ScalarProperty Name="Created_By_User" ColumnName="Created_By_User" />
+          <ScalarProperty Name="Updated_By_User" ColumnName="Updated_By_User" />
+          <ScalarProperty Name="Create_Dt_Time" ColumnName="Create_Dt_Time" />
+          <ScalarProperty Name="Update_Dt_Time" ColumnName="Update_Dt_Time" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="User_Master">
+      <EntityTypeMapping TypeName="FACSDBModel.User_Master">
+        <MappingFragment StoreEntitySet="User_Master">
+          <ScalarProperty Name="User_Id" ColumnName="User_Id" />
+          <ScalarProperty Name="User_Name" ColumnName="User_Name" />
+          <ScalarProperty Name="First_Name" ColumnName="First_Name" />
+          <ScalarProperty Name="Last_Name" ColumnName="Last_Name" />
+          <ScalarProperty Name="Employee_Code" ColumnName="Employee_Code" />
+          <ScalarProperty Name="User_Type_Id" ColumnName="User_Type_Id" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Phone_Extention" ColumnName="Phone_Extention" />
+          <ScalarProperty Name="Created_By_User" ColumnName="Created_By_User" />
+          <ScalarProperty Name="Updated_By_User" ColumnName="Updated_By_User" />
+          <ScalarProperty Name="Create_Dt_Time" ColumnName="Create_Dt_Time" />
+          <ScalarProperty Name="Update_Dt_Time" ColumnName="Update_Dt_Time" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="User_Type_Master">
+      <EntityTypeMapping TypeName="FACSDBModel.User_Type_Master">
+        <MappingFragment StoreEntitySet="User_Type_Master">
+          <ScalarProperty Name="User_Type_Id" ColumnName="User_Type_Id" />
+          <ScalarProperty Name="User_Type" ColumnName="User_Type" />
+          <ScalarProperty Name="Create_Dt_Time" ColumnName="Create_Dt_Time" />
+          <ScalarProperty Name="Update_Dt_Time" ColumnName="Update_Dt_Time" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Contact_Sub_Type_Master">
+      <EntityTypeMapping TypeName="FACSDBModel.Contact_Sub_Type_Master">
+        <MappingFragment StoreEntitySet="Contact_Sub_Type_Master">
+          <ScalarProperty Name="Update_Dt_Time" ColumnName="Update_Dt_Time" />
+          <ScalarProperty Name="Create_Dt_Time" ColumnName="Create_Dt_Time" />
+          <ScalarProperty Name="Updated_By_User" ColumnName="Updated_By_User" />
+          <ScalarProperty Name="Created_By_User" ColumnName="Created_By_User" />
+          <ScalarProperty Name="Contact_Sub_Type" ColumnName="Contact_Sub_Type" />
+          <ScalarProperty Name="Contact_Type_Id" ColumnName="Contact_Type_Id" />
+          <ScalarProperty Name="Contact_Sub_Type_Id" ColumnName="Contact_Sub_Type_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Contact_Master">
+      <EntityTypeMapping TypeName="FACSDBModel.Contact_Master">
+        <MappingFragment StoreEntitySet="Contact_Master">
+          <ScalarProperty Name="Update_Dt_Time" ColumnName="Update_Dt_Time" />
+          <ScalarProperty Name="Create_Dt_Time" ColumnName="Create_Dt_Time" />
+          <ScalarProperty Name="Updated_By_User" ColumnName="Updated_By_User" />
+          <ScalarProperty Name="Created_By_User" ColumnName="Created_By_User" />
+          <ScalarProperty Name="Contact_Person_Name" ColumnName="Contact_Person_Name" />
+          <ScalarProperty Name="Email_2" ColumnName="Email_2" />
+          <ScalarProperty Name="Email_1" ColumnName="Email_1" />
+          <ScalarProperty Name="Fax_2" ColumnName="Fax_2" />
+          <ScalarProperty Name="Fax_1" ColumnName="Fax_1" />
+          <ScalarProperty Name="Cell_2" ColumnName="Cell_2" />
+          <ScalarProperty Name="Cell_1" ColumnName="Cell_1" />
+          <ScalarProperty Name="Phone_5" ColumnName="Phone_5" />
+          <ScalarProperty Name="Phone_4" ColumnName="Phone_4" />
+          <ScalarProperty Name="Phone_3" ColumnName="Phone_3" />
+          <ScalarProperty Name="Phone_2" ColumnName="Phone_2" />
+          <ScalarProperty Name="Phone_1" ColumnName="Phone_1" />
+          <ScalarProperty Name="City_Code" ColumnName="City_Code" />
+          <ScalarProperty Name="Country_Code" ColumnName="Country_Code" />
+          <ScalarProperty Name="Contact_Sub_Type" ColumnName="Contact_Sub_Type" />
+          <ScalarProperty Name="Contact_Type" ColumnName="Contact_Type" />
+          <ScalarProperty Name="Contact_Id" ColumnName="Contact_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Address_Master">
+      <EntityTypeMapping TypeName="FACSDBModel.Address_Master">
+        <MappingFragment StoreEntitySet="Address_Master">
+          <ScalarProperty Name="Update_Dt_Time" ColumnName="Update_Dt_Time" />
+          <ScalarProperty Name="Create_Dt_Time" ColumnName="Create_Dt_Time" />
+          <ScalarProperty Name="Updated_By_User" ColumnName="Updated_By_User" />
+          <ScalarProperty Name="Created_By_User" ColumnName="Created_By_User" />
+          <ScalarProperty Name="ZipCode" ColumnName="ZipCode" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="Address_Line_3" ColumnName="Address_Line_3" />
+          <ScalarProperty Name="Address_Line_2" ColumnName="Address_Line_2" />
+          <ScalarProperty Name="Address_Line_1" ColumnName="Address_Line_1" />
+          <ScalarProperty Name="Address_Sub_Type" ColumnName="Address_Sub_Type" />
+          <ScalarProperty Name="Address_Type" ColumnName="Address_Type" />
+          <ScalarProperty Name="Address_Id" ColumnName="Address_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Address_Sub_Type_Master">
+      <EntityTypeMapping TypeName="FACSDBModel.Address_Sub_Type_Master">
+        <MappingFragment StoreEntitySet="Address_Sub_Type_Master">
+          <ScalarProperty Name="Update_Dt_Time" ColumnName="Update_Dt_Time" />
+          <ScalarProperty Name="Create_Dt_Time" ColumnName="Create_Dt_Time" />
+          <ScalarProperty Name="Updated_By_User" ColumnName="Updated_By_User" />
+          <ScalarProperty Name="Created_By_User" ColumnName="Created_By_User" />
+          <ScalarProperty Name="Address_Sub_Type" ColumnName="Address_Sub_Type" />
+          <ScalarProperty Name="Address_Type_Id" ColumnName="Address_Type_Id" />
+          <ScalarProperty Name="Address_Sub_Type_Id" ColumnName="Address_Sub_Type_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Address_Type_Master">
+      <EntityTypeMapping TypeName="FACSDBModel.Address_Type_Master">
+        <MappingFragment StoreEntitySet="Address_Type_Master">
+          <ScalarProperty Name="Update_Dt_Time" ColumnName="Update_Dt_Time" />
+          <ScalarProperty Name="Create_Dt_Time" ColumnName="Create_Dt_Time" />
+          <ScalarProperty Name="Updated_By_User" ColumnName="Updated_By_User" />
+          <ScalarProperty Name="Created_By_User" ColumnName="Created_By_User" />
+          <ScalarProperty Name="Address_Type" ColumnName="Address_Type" />
+          <ScalarProperty Name="Address_Type_Id" ColumnName="Address_Type_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Patient_Type_Master">
+      <EntityTypeMapping TypeName="FACSDBModel.Patient_Type_Master">
+        <MappingFragment StoreEntitySet="Patient_Type_Master">
+          <ScalarProperty Name="Update_Dt_Time" ColumnName="Update_Dt_Time" />
+          <ScalarProperty Name="Create_Dt_Time" ColumnName="Create_Dt_Time" />
+          <ScalarProperty Name="Updated_By_User" ColumnName="Updated_By_User" />
+          <ScalarProperty Name="Created_By_User" ColumnName="Created_By_User" />
+          <ScalarProperty Name="Patient_Type" ColumnName="Patient_Type" />
+          <ScalarProperty Name="Patient_Type_Code" ColumnName="Patient_Type_Code" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Patient_Receivables_Info">
+      <EntityTypeMapping TypeName="FACSDBModel.Patient_Receivables_Info">
+        <MappingFragment StoreEntitySet="Patient_Receivables_Info">
+          <ScalarProperty Name="Update_Dt_Time" ColumnName="Update_Dt_Time" />
+          <ScalarProperty Name="Create_Dt_Time" ColumnName="Create_Dt_Time" />
+          <ScalarProperty Name="Updated_By_User" ColumnName="Updated_By_User" />
+          <ScalarProperty Name="Created_By_User" ColumnName="Created_By_User" />
+          <ScalarProperty Name="Payer_Id" ColumnName="Payer_Id" />
+          <ScalarProperty Name="Patient_Type_Code" ColumnName="Patient_Type_Code" />
+          <ScalarProperty Name="Patient_Id" ColumnName="Patient_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Patient_Treatments">
+      <EntityTypeMapping TypeName="FACSDBModel.Patient_Treatments">
+        <MappingFragment StoreEntitySet="Patient_Treatments">
+          <ScalarProperty Name="Update_Dt_Time" ColumnName="Update_Dt_Time" />
+          <ScalarProperty Name="Create_Dt_Time" ColumnName="Create_Dt_Time" />
+          <ScalarProperty Name="Updated_By_User" ColumnName="Updated_By_User" />
+          <ScalarProperty Name="Created_By_User" ColumnName="Created_By_User" />
+          <ScalarProperty Name="Total_Charges" ColumnName="Total_Charges" />
+          <ScalarProperty Name="Treatment_Description" ColumnName="Treatment_Description" />
+          <ScalarProperty Name="Treatment_Code" ColumnName="Treatment_Code" />
+          <ScalarProperty Name="Treatment_Date" ColumnName="Treatment_Date" />
+          <ScalarProperty Name="Patient_Id" ColumnName="Patient_Id" />
+          <ScalarProperty Name="Patient_Treatments_Id" ColumnName="Patient_Treatments_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Patient_Status">
+      <EntityTypeMapping TypeName="FACSDBModel.Patient_Status">
+        <MappingFragment StoreEntitySet="Patient_Status">
+          <ScalarProperty Name="Total_Paid_Amount" ColumnName="Total_Paid_Amount" />
+          <ScalarProperty Name="Last_Payment_Amount" ColumnName="Last_Payment_Amount" />
+          <ScalarProperty Name="Last_Payment_Date" ColumnName="Last_Payment_Date" />
+          <ScalarProperty Name="Uppdate_Dt_Time" ColumnName="Uppdate_Dt_Time" />
+          <ScalarProperty Name="Create_Dt_Time" ColumnName="Create_Dt_Time" />
+          <ScalarProperty Name="Updated_By_User" ColumnName="Updated_By_User" />
+          <ScalarProperty Name="Created_By_User" ColumnName="Created_By_User" />
+          <ScalarProperty Name="IsLatest" ColumnName="IsLatest" />
+          <ScalarProperty Name="Notes" ColumnName="Notes" />
+          <ScalarProperty Name="Current_Balance" ColumnName="Current_Balance" />
+          <ScalarProperty Name="Valid_Contact_Number_Type" ColumnName="Valid_Contact_Number_Type" />
+          <ScalarProperty Name="Valid_Contact_Number" ColumnName="Valid_Contact_Number" />
+          <ScalarProperty Name="Method_Of_Contact" ColumnName="Method_Of_Contact" />
+          <ScalarProperty Name="Contact_Date" ColumnName="Contact_Date" />
+          <ScalarProperty Name="Disposition_Id" ColumnName="Disposition_Id" />
+          <ScalarProperty Name="Collector_Id" ColumnName="Collector_Id" />
+          <ScalarProperty Name="Patient_Id" ColumnName="Patient_Id" />
+          <ScalarProperty Name="Status_Id" ColumnName="Status_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Payments">
+      <EntityTypeMapping TypeName="FACSDBModel.Payment">
+        <MappingFragment StoreEntitySet="Payments">
+          <ScalarProperty Name="Revenue" ColumnName="Revenue" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="Update_Dt_Time" ColumnName="Update_Dt_Time" />
+          <ScalarProperty Name="Create_Dt_Time" ColumnName="Create_Dt_Time" />
+          <ScalarProperty Name="Updated_By_User" ColumnName="Updated_By_User" />
+          <ScalarProperty Name="Created_By_User" ColumnName="Created_By_User" />
+          <ScalarProperty Name="Payment_Details" ColumnName="Payment_Details" />
+          <ScalarProperty Name="Payment_Post_Date" ColumnName="Payment_Post_Date" />
+          <ScalarProperty Name="Payment_Date" ColumnName="Payment_Date" />
+          <ScalarProperty Name="Payment_Amount" ColumnName="Payment_Amount" />
+          <ScalarProperty Name="Payment_Type" ColumnName="Payment_Type" />
+          <ScalarProperty Name="Payment_Index" ColumnName="Payment_Index" />
+          <ScalarProperty Name="Patient_Id" ColumnName="Patient_Id" />
+          <ScalarProperty Name="Payments_Id" ColumnName="Payments_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

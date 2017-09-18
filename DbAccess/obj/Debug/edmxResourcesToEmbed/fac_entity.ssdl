@@ -1,0 +1,542 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="FACSDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Address_Master">
+    <Key>
+      <PropertyRef Name="Address_Id" />
+    </Key>
+    <Property Name="Address_Id" Type="int" Nullable="false" />
+    <Property Name="Address_Type" Type="int" Nullable="false" />
+    <Property Name="Address_Sub_Type" Type="int" Nullable="false" />
+    <Property Name="Address_Line_1" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Address_Line_2" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Address_Line_3" Type="varchar" MaxLength="100" />
+    <Property Name="City" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="State" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ZipCode" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Created_By_User" Type="int" Nullable="false" />
+    <Property Name="Updated_By_User" Type="int" Nullable="false" />
+    <Property Name="Create_Dt_Time" Type="datetime" Nullable="false" />
+    <Property Name="Update_Dt_Time" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Address_Sub_Type_Master">
+    <Key>
+      <PropertyRef Name="Address_Sub_Type_Id" />
+    </Key>
+    <Property Name="Address_Sub_Type_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Address_Type_Id" Type="int" Nullable="false" />
+    <Property Name="Address_Sub_Type" Type="varchar" MaxLength="50" />
+    <Property Name="Created_By_User" Type="int" />
+    <Property Name="Updated_By_User" Type="int" />
+    <Property Name="Create_Dt_Time" Type="datetime" />
+    <Property Name="Update_Dt_Time" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Address_Type_Master">
+    <Key>
+      <PropertyRef Name="Address_Type_Id" />
+    </Key>
+    <Property Name="Address_Type_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Address_Type" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Created_By_User" Type="int" />
+    <Property Name="Updated_By_User" Type="int" />
+    <Property Name="Create_Dt_Time" Type="datetime" />
+    <Property Name="Update_Dt_Time" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Client_Group_Master">
+    <Key>
+      <PropertyRef Name="Hospital_Group_Id" />
+    </Key>
+    <Property Name="Hospital_Group_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Hospital_Group_Name" Type="varchar" MaxLength="150" Nullable="false" />
+    <Property Name="Hospital_Group_Code" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Created_By_User" Type="int" Nullable="false" />
+    <Property Name="Updated_By_User" Type="int" Nullable="false" />
+    <Property Name="Create_Dt_Time" Type="datetime" Nullable="false" />
+    <Property Name="Update_Dt_Time" Type="datetime" Nullable="false" />
+    <Property Name="Commission_Percentage" Type="numeric" Precision="5" Scale="2" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Client_Master">
+    <Key>
+      <PropertyRef Name="Hospital_Id" />
+    </Key>
+    <Property Name="Hospital_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Hospital_Name" Type="varchar" MaxLength="150" Nullable="false" />
+    <Property Name="Hospital_Group_Id" Type="int" />
+    <Property Name="Hospital_Speciality" Type="varchar" MaxLength="250" />
+    <Property Name="Number_Of_Beds" Type="int" />
+    <Property Name="ICCU_Available" Type="bit" />
+    <Property Name="Visitor_Hours" Type="varchar" MaxLength="50" />
+    <Property Name="Create_By_User" Type="int" Nullable="false" />
+    <Property Name="Updated_By_User" Type="int" Nullable="false" />
+    <Property Name="Create_Dt_Time" Type="datetime" Nullable="false" />
+    <Property Name="Update_Dt_Time" Type="datetime" Nullable="false" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Contact_Master">
+    <Key>
+      <PropertyRef Name="Contact_Id" />
+    </Key>
+    <Property Name="Contact_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Contact_Type" Type="int" Nullable="false" />
+    <Property Name="Contact_Sub_Type" Type="int" Nullable="false" />
+    <Property Name="Country_Code" Type="varchar" MaxLength="10" />
+    <Property Name="City_Code" Type="varchar" MaxLength="20" />
+    <Property Name="Phone_1" Type="varchar" MaxLength="20" />
+    <Property Name="Phone_2" Type="varchar" MaxLength="20" />
+    <Property Name="Phone_3" Type="varchar" MaxLength="20" />
+    <Property Name="Phone_4" Type="varchar" MaxLength="20" />
+    <Property Name="Phone_5" Type="varchar" MaxLength="20" />
+    <Property Name="Cell_1" Type="varchar" MaxLength="20" />
+    <Property Name="Cell_2" Type="varchar" MaxLength="20" />
+    <Property Name="Fax_1" Type="varchar" MaxLength="20" />
+    <Property Name="Fax_2" Type="varchar" MaxLength="20" />
+    <Property Name="Email_1" Type="varchar" MaxLength="100" />
+    <Property Name="Email_2" Type="varchar" MaxLength="100" />
+    <Property Name="Contact_Person_Name" Type="varchar" MaxLength="100" />
+    <Property Name="Created_By_User" Type="int" />
+    <Property Name="Updated_By_User" Type="int" />
+    <Property Name="Create_Dt_Time" Type="datetime" />
+    <Property Name="Update_Dt_Time" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Contact_Sub_Type_Master">
+    <Key>
+      <PropertyRef Name="Contact_Sub_Type_Id" />
+    </Key>
+    <Property Name="Contact_Sub_Type_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Contact_Type_Id" Type="int" Nullable="false" />
+    <Property Name="Contact_Sub_Type" Type="varchar" MaxLength="50" />
+    <Property Name="Created_By_User" Type="int" />
+    <Property Name="Updated_By_User" Type="int" />
+    <Property Name="Create_Dt_Time" Type="datetime" />
+    <Property Name="Update_Dt_Time" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Contact_Type_Master">
+    <Key>
+      <PropertyRef Name="Contact_Type_Id" />
+    </Key>
+    <Property Name="Contact_Type_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Contact_Type" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Created_By_User" Type="int" />
+    <Property Name="Updated_By_User" Type="int" />
+    <Property Name="Create_Dt_Time" Type="datetime" />
+    <Property Name="Update_Dt_Time" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Disposition_Master">
+    <Key>
+      <PropertyRef Name="Disposition_Id" />
+    </Key>
+    <Property Name="Disposition_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Disposition" Type="varchar" MaxLength="50" />
+    <Property Name="Disposition_Group" Type="varchar" MaxLength="50" />
+    <Property Name="Created_By_User" Type="int" />
+    <Property Name="Updated_By_User" Type="int" />
+    <Property Name="Create_Dt_Time" Type="datetime" />
+    <Property Name="Update_Dt_Time" Type="datetime" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Patient_Master">
+    <Key>
+      <PropertyRef Name="Patient_Id" />
+    </Key>
+    <Property Name="Patient_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PatientNoFromClient" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Patient_Last_Name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Patient_First_Name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Patient_Middle_Name" Type="varchar" MaxLength="50" />
+    <Property Name="Patient_SocialSecurity" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="Hospital_Id" Type="int" Nullable="false" />
+    <Property Name="Admit_Date" Type="date" Nullable="false" />
+    <Property Name="Discharge_Date" Type="date" Nullable="false" />
+    <Property Name="Patient_Bill_Amount" Type="money" Nullable="false" />
+    <Property Name="Patient_Insurance_Bill_Amount" Type="money" Nullable="false" />
+    <Property Name="Total_Charges" Type="money" Nullable="false" />
+    <Property Name="Placement_Date" Type="date" Nullable="false" />
+    <Property Name="Created_By_User" Type="int" Nullable="false" />
+    <Property Name="Updated_By_User" Type="int" Nullable="false" />
+    <Property Name="Create_Dt_Time" Type="datetime" Nullable="false" />
+    <Property Name="Update_Dt_Time" Type="datetime" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="IsClosed" Type="bit" Nullable="false" />
+    <Property Name="Closed_Date" Type="date" />
+  </EntityType>
+  <EntityType Name="Patient_Receivables_Info">
+    <Key>
+      <PropertyRef Name="Patient_Id" />
+      <PropertyRef Name="Patient_Type_Code" />
+      <PropertyRef Name="Payer_Id" />
+    </Key>
+    <Property Name="Patient_Id" Type="int" Nullable="false" />
+    <Property Name="Patient_Type_Code" Type="varchar" MaxLength="2" Nullable="false" />
+    <Property Name="Payer_Id" Type="int" Nullable="false" />
+    <Property Name="Created_By_User" Type="int" />
+    <Property Name="Updated_By_User" Type="int" />
+    <Property Name="Create_Dt_Time" Type="datetime" />
+    <Property Name="Update_Dt_Time" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Patient_Status">
+    <Key>
+      <PropertyRef Name="Status_Id" />
+    </Key>
+    <Property Name="Status_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Patient_Id" Type="int" Nullable="false" />
+    <Property Name="Collector_Id" Type="int" Nullable="false" />
+    <Property Name="Disposition_Id" Type="int" Nullable="false" />
+    <Property Name="Contact_Date" Type="datetime" Nullable="false" />
+    <Property Name="Method_Of_Contact" Type="varchar" MaxLength="50" />
+    <Property Name="Valid_Contact_Number" Type="varchar" MaxLength="50" />
+    <Property Name="Valid_Contact_Number_Type" Type="varchar" MaxLength="50" />
+    <Property Name="Current_Balance" Type="money" Nullable="false" />
+    <Property Name="Notes" Type="varchar(max)" />
+    <Property Name="IsLatest" Type="bit" Nullable="false" />
+    <Property Name="Created_By_User" Type="int" />
+    <Property Name="Updated_By_User" Type="int" />
+    <Property Name="Create_Dt_Time" Type="datetime" />
+    <Property Name="Uppdate_Dt_Time" Type="datetime" />
+    <Property Name="Last_Payment_Date" Type="date" />
+    <Property Name="Last_Payment_Amount" Type="money" />
+    <Property Name="Total_Paid_Amount" Type="money" />
+  </EntityType>
+  <EntityType Name="Patient_Treatments">
+    <Key>
+      <PropertyRef Name="Patient_Treatments_Id" />
+    </Key>
+    <Property Name="Patient_Treatments_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Patient_Id" Type="int" Nullable="false" />
+    <Property Name="Treatment_Date" Type="date" Nullable="false" />
+    <Property Name="Treatment_Code" Type="varchar" MaxLength="10" />
+    <Property Name="Treatment_Description" Type="varchar" MaxLength="100" />
+    <Property Name="Total_Charges" Type="money" Nullable="false" />
+    <Property Name="Created_By_User" Type="int" />
+    <Property Name="Updated_By_User" Type="int" />
+    <Property Name="Create_Dt_Time" Type="datetime" />
+    <Property Name="Update_Dt_Time" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Patient_Type_Master">
+    <Key>
+      <PropertyRef Name="Patient_Type_Code" />
+    </Key>
+    <Property Name="Patient_Type_Code" Type="varchar" MaxLength="2" Nullable="false" />
+    <Property Name="Patient_Type" Type="varchar" MaxLength="30" />
+    <Property Name="Created_By_User" Type="int" />
+    <Property Name="Updated_By_User" Type="int" />
+    <Property Name="Create_Dt_Time" Type="datetime" />
+    <Property Name="Update_Dt_Time" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Payer_Master">
+    <Key>
+      <PropertyRef Name="Payer_Id" />
+    </Key>
+    <Property Name="Payer_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Payer_Name" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="Created_By_User" Type="int" />
+    <Property Name="Updated_By_User" Type="int" />
+    <Property Name="Create_Dt_Time" Type="datetime" />
+    <Property Name="Update_Dt_Time" Type="datetime" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Payments">
+    <Key>
+      <PropertyRef Name="Payments_Id" />
+    </Key>
+    <Property Name="Payments_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Patient_Id" Type="int" Nullable="false" />
+    <Property Name="Payment_Index" Type="int" Nullable="false" />
+    <Property Name="Payment_Type" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Payment_Amount" Type="money" Nullable="false" />
+    <Property Name="Payment_Date" Type="date" Nullable="false" />
+    <Property Name="Payment_Post_Date" Type="date" Nullable="false" />
+    <Property Name="Payment_Details" Type="varchar" MaxLength="250" />
+    <Property Name="Created_By_User" Type="int" />
+    <Property Name="Updated_By_User" Type="int" />
+    <Property Name="Create_Dt_Time" Type="datetime" />
+    <Property Name="Update_Dt_Time" Type="datetime" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="Revenue" Type="money" Nullable="false" />
+  </EntityType>
+  <EntityType Name="User_Master">
+    <Key>
+      <PropertyRef Name="User_Id" />
+    </Key>
+    <Property Name="User_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="User_Name" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="First_Name" Type="varchar" MaxLength="100" />
+    <Property Name="Last_Name" Type="varchar" MaxLength="100" />
+    <Property Name="Employee_Code" Type="varchar" MaxLength="5" />
+    <Property Name="User_Type_Id" Type="int" Nullable="false" />
+    <Property Name="Email" Type="varchar" MaxLength="200" />
+    <Property Name="Phone_Extention" Type="varchar" MaxLength="5" />
+    <Property Name="Created_By_User" Type="int" />
+    <Property Name="Updated_By_User" Type="int" />
+    <Property Name="Create_Dt_Time" Type="datetime" />
+    <Property Name="Update_Dt_Time" Type="datetime" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="User_Type_Master">
+    <Key>
+      <PropertyRef Name="User_Type_Id" />
+    </Key>
+    <Property Name="User_Type_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="User_Type" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Create_Dt_Time" Type="datetime" Nullable="false" />
+    <Property Name="Update_Dt_Time" Type="datetime" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Address_Master_ToTable">
+    <End Role="Address_Sub_Type_Master" Type="Self.Address_Sub_Type_Master" Multiplicity="1" />
+    <End Role="Address_Master" Type="Self.Address_Master" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Address_Sub_Type_Master">
+        <PropertyRef Name="Address_Sub_Type_Id" />
+      </Principal>
+      <Dependent Role="Address_Master">
+        <PropertyRef Name="Address_Sub_Type" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Address_Sub_Type_Master_Address_Type_Master">
+    <End Role="Address_Type_Master" Type="Self.Address_Type_Master" Multiplicity="1" />
+    <End Role="Address_Sub_Type_Master" Type="Self.Address_Sub_Type_Master" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Address_Type_Master">
+        <PropertyRef Name="Address_Type_Id" />
+      </Principal>
+      <Dependent Role="Address_Sub_Type_Master">
+        <PropertyRef Name="Address_Type_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Client_Master_Client_Group_Master">
+    <End Role="Client_Group_Master" Type="Self.Client_Group_Master" Multiplicity="0..1" />
+    <End Role="Client_Master" Type="Self.Client_Master" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Client_Group_Master">
+        <PropertyRef Name="Hospital_Group_Id" />
+      </Principal>
+      <Dependent Role="Client_Master">
+        <PropertyRef Name="Hospital_Group_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Contact_Master_Contact_Sub_Type_Master">
+    <End Role="Contact_Sub_Type_Master" Type="Self.Contact_Sub_Type_Master" Multiplicity="1" />
+    <End Role="Contact_Master" Type="Self.Contact_Master" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Contact_Sub_Type_Master">
+        <PropertyRef Name="Contact_Sub_Type_Id" />
+      </Principal>
+      <Dependent Role="Contact_Master">
+        <PropertyRef Name="Contact_Sub_Type" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Contact_Master_Contact_Type_Master">
+    <End Role="Contact_Type_Master" Type="Self.Contact_Type_Master" Multiplicity="1" />
+    <End Role="Contact_Master" Type="Self.Contact_Master" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Contact_Type_Master">
+        <PropertyRef Name="Contact_Type_Id" />
+      </Principal>
+      <Dependent Role="Contact_Master">
+        <PropertyRef Name="Contact_Type" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Contact_Sub_Type_Master_Contact_Type_Master">
+    <End Role="Contact_Type_Master" Type="Self.Contact_Type_Master" Multiplicity="1" />
+    <End Role="Contact_Sub_Type_Master" Type="Self.Contact_Sub_Type_Master" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Contact_Type_Master">
+        <PropertyRef Name="Contact_Type_Id" />
+      </Principal>
+      <Dependent Role="Contact_Sub_Type_Master">
+        <PropertyRef Name="Contact_Type_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Patient_Receivables_Info_Patient_master">
+    <End Role="Patient_Master" Type="Self.Patient_Master" Multiplicity="1" />
+    <End Role="Patient_Receivables_Info" Type="Self.Patient_Receivables_Info" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Patient_Master">
+        <PropertyRef Name="Patient_Id" />
+      </Principal>
+      <Dependent Role="Patient_Receivables_Info">
+        <PropertyRef Name="Patient_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Patient_Receivables_Info_Patient_Type_Master">
+    <End Role="Patient_Type_Master" Type="Self.Patient_Type_Master" Multiplicity="1" />
+    <End Role="Patient_Receivables_Info" Type="Self.Patient_Receivables_Info" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Patient_Type_Master">
+        <PropertyRef Name="Patient_Type_Code" />
+      </Principal>
+      <Dependent Role="Patient_Receivables_Info">
+        <PropertyRef Name="Patient_Type_Code" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Patient_Receivables_Info_Payer_Master">
+    <End Role="Payer_Master" Type="Self.Payer_Master" Multiplicity="1" />
+    <End Role="Patient_Receivables_Info" Type="Self.Patient_Receivables_Info" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Payer_Master">
+        <PropertyRef Name="Payer_Id" />
+      </Principal>
+      <Dependent Role="Patient_Receivables_Info">
+        <PropertyRef Name="Payer_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Patient_Status_Contact_Master">
+    <End Role="Contact_Master" Type="Self.Contact_Master" Multiplicity="1" />
+    <End Role="Patient_Status" Type="Self.Patient_Status" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Contact_Master">
+        <PropertyRef Name="Contact_Id" />
+      </Principal>
+      <Dependent Role="Patient_Status">
+        <PropertyRef Name="Collector_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Patient_Status_Disposition_Master">
+    <End Role="Disposition_Master" Type="Self.Disposition_Master" Multiplicity="1" />
+    <End Role="Patient_Status" Type="Self.Patient_Status" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Disposition_Master">
+        <PropertyRef Name="Disposition_Id" />
+      </Principal>
+      <Dependent Role="Patient_Status">
+        <PropertyRef Name="Disposition_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Patient_Status_Patient_Master">
+    <End Role="Patient_Master" Type="Self.Patient_Master" Multiplicity="1" />
+    <End Role="Patient_Status" Type="Self.Patient_Status" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Patient_Master">
+        <PropertyRef Name="Patient_Id" />
+      </Principal>
+      <Dependent Role="Patient_Status">
+        <PropertyRef Name="Patient_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Patient_Treatments_ToTable">
+    <End Role="Patient_Master" Type="Self.Patient_Master" Multiplicity="1" />
+    <End Role="Patient_Treatments" Type="Self.Patient_Treatments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Patient_Master">
+        <PropertyRef Name="Patient_Id" />
+      </Principal>
+      <Dependent Role="Patient_Treatments">
+        <PropertyRef Name="Patient_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Payments_ToTable">
+    <End Role="Patient_Master" Type="Self.Patient_Master" Multiplicity="1" />
+    <End Role="Payments" Type="Self.Payments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Patient_Master">
+        <PropertyRef Name="Patient_Id" />
+      </Principal>
+      <Dependent Role="Payments">
+        <PropertyRef Name="Patient_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_User_Master_User_Type_Master">
+    <End Role="User_Type_Master" Type="Self.User_Type_Master" Multiplicity="1" />
+    <End Role="User_Master" Type="Self.User_Master" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User_Type_Master">
+        <PropertyRef Name="User_Type_Id" />
+      </Principal>
+      <Dependent Role="User_Master">
+        <PropertyRef Name="User_Type_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="FACSDBModelStoreContainer">
+    <EntitySet Name="Address_Master" EntityType="Self.Address_Master" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Address_Sub_Type_Master" EntityType="Self.Address_Sub_Type_Master" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Address_Type_Master" EntityType="Self.Address_Type_Master" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Client_Group_Master" EntityType="Self.Client_Group_Master" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Client_Master" EntityType="Self.Client_Master" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Contact_Master" EntityType="Self.Contact_Master" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Contact_Sub_Type_Master" EntityType="Self.Contact_Sub_Type_Master" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Contact_Type_Master" EntityType="Self.Contact_Type_Master" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Disposition_Master" EntityType="Self.Disposition_Master" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Patient_Master" EntityType="Self.Patient_Master" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Patient_Receivables_Info" EntityType="Self.Patient_Receivables_Info" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Patient_Status" EntityType="Self.Patient_Status" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Patient_Treatments" EntityType="Self.Patient_Treatments" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Patient_Type_Master" EntityType="Self.Patient_Type_Master" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Payer_Master" EntityType="Self.Payer_Master" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Payments" EntityType="Self.Payments" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="User_Master" EntityType="Self.User_Master" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="User_Type_Master" EntityType="Self.User_Type_Master" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Address_Master_ToTable" Association="Self.FK_Address_Master_ToTable">
+      <End Role="Address_Sub_Type_Master" EntitySet="Address_Sub_Type_Master" />
+      <End Role="Address_Master" EntitySet="Address_Master" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Address_Sub_Type_Master_Address_Type_Master" Association="Self.FK_Address_Sub_Type_Master_Address_Type_Master">
+      <End Role="Address_Type_Master" EntitySet="Address_Type_Master" />
+      <End Role="Address_Sub_Type_Master" EntitySet="Address_Sub_Type_Master" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Client_Master_Client_Group_Master" Association="Self.FK_Client_Master_Client_Group_Master">
+      <End Role="Client_Group_Master" EntitySet="Client_Group_Master" />
+      <End Role="Client_Master" EntitySet="Client_Master" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Contact_Master_Contact_Sub_Type_Master" Association="Self.FK_Contact_Master_Contact_Sub_Type_Master">
+      <End Role="Contact_Sub_Type_Master" EntitySet="Contact_Sub_Type_Master" />
+      <End Role="Contact_Master" EntitySet="Contact_Master" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Contact_Master_Contact_Type_Master" Association="Self.FK_Contact_Master_Contact_Type_Master">
+      <End Role="Contact_Type_Master" EntitySet="Contact_Type_Master" />
+      <End Role="Contact_Master" EntitySet="Contact_Master" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Contact_Sub_Type_Master_Contact_Type_Master" Association="Self.FK_Contact_Sub_Type_Master_Contact_Type_Master">
+      <End Role="Contact_Type_Master" EntitySet="Contact_Type_Master" />
+      <End Role="Contact_Sub_Type_Master" EntitySet="Contact_Sub_Type_Master" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Patient_Receivables_Info_Patient_master" Association="Self.FK_Patient_Receivables_Info_Patient_master">
+      <End Role="Patient_Master" EntitySet="Patient_Master" />
+      <End Role="Patient_Receivables_Info" EntitySet="Patient_Receivables_Info" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Patient_Receivables_Info_Patient_Type_Master" Association="Self.FK_Patient_Receivables_Info_Patient_Type_Master">
+      <End Role="Patient_Type_Master" EntitySet="Patient_Type_Master" />
+      <End Role="Patient_Receivables_Info" EntitySet="Patient_Receivables_Info" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Patient_Receivables_Info_Payer_Master" Association="Self.FK_Patient_Receivables_Info_Payer_Master">
+      <End Role="Payer_Master" EntitySet="Payer_Master" />
+      <End Role="Patient_Receivables_Info" EntitySet="Patient_Receivables_Info" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Patient_Status_Contact_Master" Association="Self.FK_Patient_Status_Contact_Master">
+      <End Role="Contact_Master" EntitySet="Contact_Master" />
+      <End Role="Patient_Status" EntitySet="Patient_Status" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Patient_Status_Disposition_Master" Association="Self.FK_Patient_Status_Disposition_Master">
+      <End Role="Disposition_Master" EntitySet="Disposition_Master" />
+      <End Role="Patient_Status" EntitySet="Patient_Status" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Patient_Status_Patient_Master" Association="Self.FK_Patient_Status_Patient_Master">
+      <End Role="Patient_Master" EntitySet="Patient_Master" />
+      <End Role="Patient_Status" EntitySet="Patient_Status" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Patient_Treatments_ToTable" Association="Self.FK_Patient_Treatments_ToTable">
+      <End Role="Patient_Master" EntitySet="Patient_Master" />
+      <End Role="Patient_Treatments" EntitySet="Patient_Treatments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Payments_ToTable" Association="Self.FK_Payments_ToTable">
+      <End Role="Patient_Master" EntitySet="Patient_Master" />
+      <End Role="Payments" EntitySet="Payments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_User_Master_User_Type_Master" Association="Self.FK_User_Master_User_Type_Master">
+      <End Role="User_Type_Master" EntitySet="User_Type_Master" />
+      <End Role="User_Master" EntitySet="User_Master" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

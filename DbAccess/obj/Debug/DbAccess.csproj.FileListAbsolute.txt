@@ -1,0 +1,9 @@
+D:\Yagnesh\Sandeep Barve\FAC\Application\DbAccess\bin\Debug\DbAccess.dll.config
+D:\Yagnesh\Sandeep Barve\FAC\Application\DbAccess\bin\Debug\DbAccess.dll
+D:\Yagnesh\Sandeep Barve\FAC\Application\DbAccess\bin\Debug\DbAccess.pdb
+D:\Yagnesh\Sandeep Barve\FAC\Application\DbAccess\bin\Debug\EntityFramework.dll
+D:\Yagnesh\Sandeep Barve\FAC\Application\DbAccess\bin\Debug\EntityFramework.SqlServer.dll
+D:\Yagnesh\Sandeep Barve\FAC\Application\DbAccess\bin\Debug\EntityFramework.xml
+D:\Yagnesh\Sandeep Barve\FAC\Application\DbAccess\bin\Debug\EntityFramework.SqlServer.xml
+D:\Yagnesh\Sandeep Barve\FAC\Application\DbAccess\obj\Debug\DbAccess.dll
+D:\Yagnesh\Sandeep Barve\FAC\Application\DbAccess\obj\Debug\DbAccess.pdb

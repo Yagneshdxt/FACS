@@ -1,0 +1,136 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/datatable")
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @RenderSection("styles", required: false)
+</head>
+<body>
+    <div id="wrapper">
+        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="~/">FACS</a>
+            </div>
+            <!-- /.navbar-header -->
+            @Html.Partial("_LoginPartial")
+            <!-- /.navbar-top-links -->
+            <div class="navbar-default sidebar" role="navigation">
+                <div class="sidebar-nav navbar-collapse">
+                    <ul class="nav" id="side-menu">
+                        <li>
+                            <a href="#"><i class="fa fa-edit fa-fw"></i> Clients <span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>  @Html.ActionLink("Client Group", "Index", "Client_Group_Master") </li>
+                                <li>
+                                    @Html.ActionLink("Client", "Index", "Client_Master")
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-edit fa-fw"></i> Contact <span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    @Html.ActionLink("Contact Type", "Index", "Contact_Type_Master")
+                                </li>
+                                <li>
+                                    @Html.ActionLink("Contact Sub Type", "Index", "Contact_Sub_Type_Master")
+                                </li>
+                                <li>
+                                    @Html.ActionLink("Contact", "Index", "Contact_Master")
+                                </li>
+                            </ul>
+                        </li>
+                        @*<li>
+                            <a href="#"><i class="fa fa-edit fa-fw"></i> User <span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    @Html.ActionLink("User Type", "Index", "User_Type_Master")
+                                </li>
+                                <li>
+                                    @Html.ActionLink("User", "Index", "User_Master")
+                                </li>
+                            </ul>
+                        </li>*@
+                        <li>
+                            <a href='@Url.Action("Index", "Payer_Master")'><i class="fa fa-edit fa-fw"></i> Payer </a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-edit fa-fw"></i> Address <span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    @Html.ActionLink("Address Type", "Index", "Address_Type_Master")
+                                </li>
+                                <li>
+                                    @Html.ActionLink("Address Sub Type", "Index", "Address_Sub_Type_Master")
+                                </li>
+                                <li>
+                                    @Html.ActionLink("Address", "Index", "Address_Master")
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href='@Url.Action("Index", "Disposition_Master")'><i class="fa fa-edit fa-fw"></i> Disposition </a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-edit fa-fw"></i> Patient <span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    @Html.ActionLink("Patient", "Index", "Patient_Master")
+                                    @*@Html.ActionLink("Patient", "CommingSoon", "Home")*@
+                                </li>
+                                <li>
+                                    @*@Html.ActionLink("Patient Type", "CommingSoon", "Home")*@
+                                    @Html.ActionLink("Patient Type", "Index", "Patient_Type_Master")
+                                </li>
+                                <li>
+                                    @*@Html.ActionLink("Patient Receivables Info", "CommingSoon", "Home")*@
+                                    @Html.ActionLink("Patient Receivables Info", "Index", "Patient_Receivables_Info")
+                                </li>
+                                <li>
+                                    @*@Html.ActionLink("Patient Treatment", "CommingSoon", "Home")*@
+                                    @Html.ActionLink("Patient Treatment", "Index", "Patient_Treatments")
+                                </li>
+                                <li>
+                                    @*@Html.ActionLink("Patient Status", "CommingSoon", "Home")*@
+                                    @Html.ActionLink("Patient Status", "Index", "Patient_Status")
+                                </li>
+                                <li>
+                                    @*@Html.ActionLink("Payments", "CommingSoon", "Home")*@
+                                    @Html.ActionLink("Payments", "Index", "Payments")
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <!-- /.sidebar-collapse -->
+            </div>
+            <!-- /.navbar-static-side -->
+        </nav>
+
+        <div id="page-wrapper">
+            <div class="container-fluid">
+                @RenderBody()
+                <hr />
+                <footer>
+                    <p>&copy; @DateTime.Now.Year - Hospital Claim management</p>
+                </footer>
+            </div>
+        </div>
+    </div>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/datatable")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,37 @@
+﻿@model DbAccess.Patient_Type_Master
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Patient Type Master</h4>
+    <hr />
+    <dl class="dl-horizontal">
+       
+        <dt>
+            @Html.DisplayNameFor(model => model.Patient_Type_Code)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Patient_Type_Code)
+        </dd>
+        
+         <dt>
+            @Html.DisplayNameFor(model => model.Patient_Type)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Patient_Type)
+        </dd>
+
+        
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Patient_Type_Code }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

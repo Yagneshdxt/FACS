@@ -1,0 +1,572 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="FACSDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Client_Group_Master">
+    <Key>
+      <PropertyRef Name="Hospital_Group_Id" />
+    </Key>
+    <Property Name="Hospital_Group_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Hospital_Group_Name" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Hospital_Group_Code" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Created_By_User" Type="Int32" Nullable="false" />
+    <Property Name="Updated_By_User" Type="Int32" Nullable="false" />
+    <Property Name="Create_Dt_Time" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Update_Dt_Time" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Commission_Percentage" Type="Decimal" Precision="5" Scale="2" Nullable="false" />
+    <NavigationProperty Name="Client_Master" Relationship="Self.FK_Client_Master_Client_Group_Master" FromRole="Client_Group_Master" ToRole="Client_Master" />
+  </EntityType>
+  <EntityType Name="Client_Master">
+    <Key>
+      <PropertyRef Name="Hospital_Id" />
+    </Key>
+    <Property Name="Hospital_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Hospital_Name" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Hospital_Group_Id" Type="Int32" />
+    <Property Name="Hospital_Speciality" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Number_Of_Beds" Type="Int32" />
+    <Property Name="ICCU_Available" Type="Boolean" />
+    <Property Name="Visitor_Hours" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Create_By_User" Type="Int32" Nullable="false" />
+    <Property Name="Updated_By_User" Type="Int32" Nullable="false" />
+    <Property Name="Create_Dt_Time" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Update_Dt_Time" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Client_Group_Master" Relationship="Self.FK_Client_Master_Client_Group_Master" FromRole="Client_Master" ToRole="Client_Group_Master" />
+  </EntityType>
+  <EntityType Name="Contact_Type_Master">
+    <Key>
+      <PropertyRef Name="Contact_Type_Id" />
+    </Key>
+    <Property Name="Contact_Type_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Contact_Type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Created_By_User" Type="Int32" />
+    <Property Name="Updated_By_User" Type="Int32" />
+    <Property Name="Create_Dt_Time" Type="DateTime" Precision="3" />
+    <Property Name="Update_Dt_Time" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Contact_Sub_Type_Master" Relationship="FACSDBModel.FK_Contact_Sub_Type_Master_Contact_Type_Master" FromRole="Contact_Type_Master" ToRole="Contact_Sub_Type_Master" />
+    <NavigationProperty Name="Contact_Master" Relationship="FACSDBModel.FK_Contact_Master_Contact_Type_Master" FromRole="Contact_Type_Master" ToRole="Contact_Master" />
+  </EntityType>
+  <EntityType Name="Disposition_Master">
+    <Key>
+      <PropertyRef Name="Disposition_Id" />
+    </Key>
+    <Property Name="Disposition_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Disposition" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Disposition_Group" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Created_By_User" Type="Int32" />
+    <Property Name="Updated_By_User" Type="Int32" />
+    <Property Name="Create_Dt_Time" Type="DateTime" Precision="3" />
+    <Property Name="Update_Dt_Time" Type="DateTime" Precision="3" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Patient_Status" Relationship="FACSDBModel.FK_Patient_Status_Disposition_Master" FromRole="Disposition_Master" ToRole="Patient_Status" />
+  </EntityType>
+  <EntityType Name="Patient_Master">
+    <Key>
+      <PropertyRef Name="Patient_Id" />
+    </Key>
+    <Property Name="Patient_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PatientNoFromClient" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Patient_Last_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Patient_First_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Patient_Middle_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Patient_SocialSecurity" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Hospital_Id" Type="Int32" Nullable="false" />
+    <Property Name="Admit_Date" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Discharge_Date" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Patient_Bill_Amount" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="Patient_Insurance_Bill_Amount" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="Total_Charges" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="Placement_Date" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Created_By_User" Type="Int32" Nullable="false" />
+    <Property Name="Updated_By_User" Type="Int32" Nullable="false" />
+    <Property Name="Create_Dt_Time" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Update_Dt_Time" Type="DateTime" Precision="3" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="IsClosed" Type="Boolean" Nullable="false" />
+    <Property Name="Closed_Date" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="Patient_Receivables_Info" Relationship="FACSDBModel.FK_Patient_Receivables_Info_Patient_master" FromRole="Patient_Master" ToRole="Patient_Receivables_Info" />
+    <NavigationProperty Name="Patient_Treatments" Relationship="FACSDBModel.FK_Patient_Treatments_ToTable" FromRole="Patient_Master" ToRole="Patient_Treatments" />
+    <NavigationProperty Name="Patient_Status" Relationship="FACSDBModel.FK_Patient_Status_Patient_Master" FromRole="Patient_Master" ToRole="Patient_Status" />
+    <NavigationProperty Name="Payments" Relationship="FACSDBModel.FK_Payments_ToTable" FromRole="Patient_Master" ToRole="Payment" />
+  </EntityType>
+  <EntityType Name="Payer_Master">
+    <Key>
+      <PropertyRef Name="Payer_Id" />
+    </Key>
+    <Property Name="Payer_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Payer_Name" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Created_By_User" Type="Int32" />
+    <Property Name="Updated_By_User" Type="Int32" />
+    <Property Name="Create_Dt_Time" Type="DateTime" Precision="3" />
+    <Property Name="Update_Dt_Time" Type="DateTime" Precision="3" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Patient_Receivables_Info" Relationship="FACSDBModel.FK_Patient_Receivables_Info_Payer_Master" FromRole="Payer_Master" ToRole="Patient_Receivables_Info" />
+  </EntityType>
+  <EntityType Name="User_Master">
+    <Key>
+      <PropertyRef Name="User_Id" />
+    </Key>
+    <Property Name="User_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="User_Name" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="First_Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Last_Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Employee_Code" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="User_Type_Id" Type="Int32" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="Phone_Extention" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="Created_By_User" Type="Int32" />
+    <Property Name="Updated_By_User" Type="Int32" />
+    <Property Name="Create_Dt_Time" Type="DateTime" Precision="3" />
+    <Property Name="Update_Dt_Time" Type="DateTime" Precision="3" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="User_Type_Master" Relationship="Self.FK_User_Master_User_Type_Master" FromRole="User_Master" ToRole="User_Type_Master" />
+  </EntityType>
+  <EntityType Name="User_Type_Master">
+    <Key>
+      <PropertyRef Name="User_Type_Id" />
+    </Key>
+    <Property Name="User_Type_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="User_Type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Create_Dt_Time" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Update_Dt_Time" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="User_Master" Relationship="Self.FK_User_Master_User_Type_Master" FromRole="User_Type_Master" ToRole="User_Master" />
+  </EntityType>
+  <Association Name="FK_Client_Master_Client_Group_Master">
+    <End Role="Client_Group_Master" Type="Self.Client_Group_Master" Multiplicity="0..1" />
+    <End Role="Client_Master" Type="Self.Client_Master" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Client_Group_Master">
+        <PropertyRef Name="Hospital_Group_Id" />
+      </Principal>
+      <Dependent Role="Client_Master">
+        <PropertyRef Name="Hospital_Group_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_User_Master_User_Type_Master">
+    <End Role="User_Type_Master" Type="Self.User_Type_Master" Multiplicity="1" />
+    <End Role="User_Master" Type="Self.User_Master" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User_Type_Master">
+        <PropertyRef Name="User_Type_Id" />
+      </Principal>
+      <Dependent Role="User_Master">
+        <PropertyRef Name="User_Type_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="FACSDBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Client_Group_Master" EntityType="Self.Client_Group_Master" />
+    <EntitySet Name="Client_Master" EntityType="Self.Client_Master" />
+    <EntitySet Name="Contact_Type_Master" EntityType="Self.Contact_Type_Master" />
+    <EntitySet Name="Disposition_Master" EntityType="Self.Disposition_Master" />
+    <EntitySet Name="Patient_Master" EntityType="Self.Patient_Master" />
+    <EntitySet Name="Payer_Master" EntityType="Self.Payer_Master" />
+    <EntitySet Name="User_Master" EntityType="Self.User_Master" />
+    <EntitySet Name="User_Type_Master" EntityType="Self.User_Type_Master" />
+    <AssociationSet Name="FK_Client_Master_Client_Group_Master" Association="Self.FK_Client_Master_Client_Group_Master">
+      <End Role="Client_Group_Master" EntitySet="Client_Group_Master" />
+      <End Role="Client_Master" EntitySet="Client_Master" />
+    </AssociationSet>
+    <AssociationSet Name="FK_User_Master_User_Type_Master" Association="Self.FK_User_Master_User_Type_Master">
+      <End Role="User_Type_Master" EntitySet="User_Type_Master" />
+      <End Role="User_Master" EntitySet="User_Master" />
+    </AssociationSet>
+    <EntitySet Name="Contact_Sub_Type_Master" EntityType="FACSDBModel.Contact_Sub_Type_Master" />
+    <AssociationSet Name="FK_Contact_Sub_Type_Master_Contact_Type_Master" Association="FACSDBModel.FK_Contact_Sub_Type_Master_Contact_Type_Master">
+      <End Role="Contact_Type_Master" EntitySet="Contact_Type_Master" />
+      <End Role="Contact_Sub_Type_Master" EntitySet="Contact_Sub_Type_Master" />
+    </AssociationSet>
+    <EntitySet Name="Contact_Master" EntityType="FACSDBModel.Contact_Master" />
+    <AssociationSet Name="FK_Contact_Master_Contact_Sub_Type_Master" Association="FACSDBModel.FK_Contact_Master_Contact_Sub_Type_Master">
+      <End Role="Contact_Sub_Type_Master" EntitySet="Contact_Sub_Type_Master" />
+      <End Role="Contact_Master" EntitySet="Contact_Master" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Contact_Master_Contact_Type_Master" Association="FACSDBModel.FK_Contact_Master_Contact_Type_Master">
+      <End Role="Contact_Type_Master" EntitySet="Contact_Type_Master" />
+      <End Role="Contact_Master" EntitySet="Contact_Master" />
+    </AssociationSet>
+    <EntitySet Name="Address_Master" EntityType="FACSDBModel.Address_Master" />
+    <EntitySet Name="Address_Sub_Type_Master" EntityType="FACSDBModel.Address_Sub_Type_Master" />
+    <EntitySet Name="Address_Type_Master" EntityType="FACSDBModel.Address_Type_Master" />
+    <AssociationSet Name="FK_Address_Master_ToTable" Association="FACSDBModel.FK_Address_Master_ToTable">
+      <End Role="Address_Sub_Type_Master" EntitySet="Address_Sub_Type_Master" />
+      <End Role="Address_Master" EntitySet="Address_Master" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Address_Sub_Type_Master_Address_Type_Master" Association="FACSDBModel.FK_Address_Sub_Type_Master_Address_Type_Master">
+      <End Role="Address_Type_Master" EntitySet="Address_Type_Master" />
+      <End Role="Address_Sub_Type_Master" EntitySet="Address_Sub_Type_Master" />
+    </AssociationSet>
+    <EntitySet Name="Patient_Type_Master" EntityType="FACSDBModel.Patient_Type_Master" />
+    <EntitySet Name="Patient_Receivables_Info" EntityType="FACSDBModel.Patient_Receivables_Info" />
+    <AssociationSet Name="FK_Patient_Receivables_Info_Patient_master" Association="FACSDBModel.FK_Patient_Receivables_Info_Patient_master">
+      <End Role="Patient_Master" EntitySet="Patient_Master" />
+      <End Role="Patient_Receivables_Info" EntitySet="Patient_Receivables_Info" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Patient_Receivables_Info_Patient_Type_Master" Association="FACSDBModel.FK_Patient_Receivables_Info_Patient_Type_Master">
+      <End Role="Patient_Type_Master" EntitySet="Patient_Type_Master" />
+      <End Role="Patient_Receivables_Info" EntitySet="Patient_Receivables_Info" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Patient_Receivables_Info_Payer_Master" Association="FACSDBModel.FK_Patient_Receivables_Info_Payer_Master">
+      <End Role="Payer_Master" EntitySet="Payer_Master" />
+      <End Role="Patient_Receivables_Info" EntitySet="Patient_Receivables_Info" />
+    </AssociationSet>
+    <EntitySet Name="Patient_Treatments" EntityType="FACSDBModel.Patient_Treatments" />
+    <AssociationSet Name="FK_Patient_Treatments_ToTable" Association="FACSDBModel.FK_Patient_Treatments_ToTable">
+      <End Role="Patient_Master" EntitySet="Patient_Master" />
+      <End Role="Patient_Treatments" EntitySet="Patient_Treatments" />
+    </AssociationSet>
+    <EntitySet Name="Patient_Status" EntityType="FACSDBModel.Patient_Status" />
+    <AssociationSet Name="FK_Patient_Status_Contact_Master" Association="FACSDBModel.FK_Patient_Status_Contact_Master">
+      <End Role="Contact_Master" EntitySet="Contact_Master" />
+      <End Role="Patient_Status" EntitySet="Patient_Status" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Patient_Status_Disposition_Master" Association="FACSDBModel.FK_Patient_Status_Disposition_Master">
+      <End Role="Disposition_Master" EntitySet="Disposition_Master" />
+      <End Role="Patient_Status" EntitySet="Patient_Status" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Patient_Status_Patient_Master" Association="FACSDBModel.FK_Patient_Status_Patient_Master">
+      <End Role="Patient_Master" EntitySet="Patient_Master" />
+      <End Role="Patient_Status" EntitySet="Patient_Status" />
+    </AssociationSet>
+    <EntitySet Name="Payments" EntityType="FACSDBModel.Payment" />
+    <AssociationSet Name="FK_Payments_ToTable" Association="FACSDBModel.FK_Payments_ToTable">
+      <End Role="Patient_Master" EntitySet="Patient_Master" />
+      <End Role="Payment" EntitySet="Payments" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Contact_Sub_Type_Master">
+    <Key>
+      <PropertyRef Name="Contact_Sub_Type_Id" />
+    </Key>
+    <Property Name="Contact_Sub_Type_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Contact_Type_Id" Type="Int32" Nullable="false" />
+    <Property Name="Contact_Sub_Type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Created_By_User" Type="Int32" />
+    <Property Name="Updated_By_User" Type="Int32" />
+    <Property Name="Create_Dt_Time" Type="DateTime" Precision="3" />
+    <Property Name="Update_Dt_Time" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Contact_Type_Master" Relationship="FACSDBModel.FK_Contact_Sub_Type_Master_Contact_Type_Master" FromRole="Contact_Sub_Type_Master" ToRole="Contact_Type_Master" />
+    <NavigationProperty Name="Contact_Master" Relationship="FACSDBModel.FK_Contact_Master_Contact_Sub_Type_Master" FromRole="Contact_Sub_Type_Master" ToRole="Contact_Master" />
+  </EntityType>
+  <Association Name="FK_Contact_Sub_Type_Master_Contact_Type_Master">
+    <End Type="FACSDBModel.Contact_Type_Master" Role="Contact_Type_Master" Multiplicity="1" />
+    <End Type="FACSDBModel.Contact_Sub_Type_Master" Role="Contact_Sub_Type_Master" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Contact_Type_Master">
+        <PropertyRef Name="Contact_Type_Id" />
+      </Principal>
+      <Dependent Role="Contact_Sub_Type_Master">
+        <PropertyRef Name="Contact_Type_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Contact_Master">
+    <Key>
+      <PropertyRef Name="Contact_Id" />
+    </Key>
+    <Property Name="Contact_Id" Type="Int32" Nullable="false" />
+    <Property Name="Contact_Type" Type="Int32" Nullable="false" />
+    <Property Name="Contact_Sub_Type" Type="Int32" Nullable="false" />
+    <Property Name="Country_Code" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="City_Code" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Phone_1" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Phone_2" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Phone_3" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Phone_4" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Phone_5" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Cell_1" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Cell_2" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Fax_1" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Fax_2" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Email_1" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Email_2" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Contact_Person_Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Created_By_User" Type="Int32" />
+    <Property Name="Updated_By_User" Type="Int32" />
+    <Property Name="Create_Dt_Time" Type="DateTime" Precision="3" />
+    <Property Name="Update_Dt_Time" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Contact_Sub_Type_Master" Relationship="FACSDBModel.FK_Contact_Master_Contact_Sub_Type_Master" FromRole="Contact_Master" ToRole="Contact_Sub_Type_Master" />
+    <NavigationProperty Name="Contact_Type_Master" Relationship="FACSDBModel.FK_Contact_Master_Contact_Type_Master" FromRole="Contact_Master" ToRole="Contact_Type_Master" />
+    <NavigationProperty Name="Patient_Status" Relationship="FACSDBModel.FK_Patient_Status_Contact_Master" FromRole="Contact_Master" ToRole="Patient_Status" />
+  </EntityType>
+  <Association Name="FK_Contact_Master_Contact_Sub_Type_Master">
+    <End Type="FACSDBModel.Contact_Sub_Type_Master" Role="Contact_Sub_Type_Master" Multiplicity="1" />
+    <End Type="FACSDBModel.Contact_Master" Role="Contact_Master" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Contact_Sub_Type_Master">
+        <PropertyRef Name="Contact_Sub_Type_Id" />
+      </Principal>
+      <Dependent Role="Contact_Master">
+        <PropertyRef Name="Contact_Sub_Type" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Contact_Master_Contact_Type_Master">
+    <End Type="FACSDBModel.Contact_Type_Master" Role="Contact_Type_Master" Multiplicity="1" />
+    <End Type="FACSDBModel.Contact_Master" Role="Contact_Master" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Contact_Type_Master">
+        <PropertyRef Name="Contact_Type_Id" />
+      </Principal>
+      <Dependent Role="Contact_Master">
+        <PropertyRef Name="Contact_Type" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Address_Master">
+    <Key>
+      <PropertyRef Name="Address_Id" />
+    </Key>
+    <Property Name="Address_Id" Type="Int32" Nullable="false" />
+    <Property Name="Address_Type" Type="Int32" Nullable="false" />
+    <Property Name="Address_Sub_Type" Type="Int32" Nullable="false" />
+    <Property Name="Address_Line_1" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Address_Line_2" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Address_Line_3" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="City" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="State" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ZipCode" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Created_By_User" Type="Int32" Nullable="false" />
+    <Property Name="Updated_By_User" Type="Int32" Nullable="false" />
+    <Property Name="Create_Dt_Time" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Update_Dt_Time" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="Address_Sub_Type_Master" Relationship="FACSDBModel.FK_Address_Master_ToTable" FromRole="Address_Master" ToRole="Address_Sub_Type_Master" />
+  </EntityType>
+  <EntityType Name="Address_Sub_Type_Master">
+    <Key>
+      <PropertyRef Name="Address_Sub_Type_Id" />
+    </Key>
+    <Property Name="Address_Sub_Type_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Address_Type_Id" Type="Int32" Nullable="false" />
+    <Property Name="Address_Sub_Type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Created_By_User" Type="Int32" />
+    <Property Name="Updated_By_User" Type="Int32" />
+    <Property Name="Create_Dt_Time" Type="DateTime" Precision="3" />
+    <Property Name="Update_Dt_Time" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Address_Master" Relationship="FACSDBModel.FK_Address_Master_ToTable" FromRole="Address_Sub_Type_Master" ToRole="Address_Master" />
+    <NavigationProperty Name="Address_Type_Master" Relationship="FACSDBModel.FK_Address_Sub_Type_Master_Address_Type_Master" FromRole="Address_Sub_Type_Master" ToRole="Address_Type_Master" />
+  </EntityType>
+  <EntityType Name="Address_Type_Master">
+    <Key>
+      <PropertyRef Name="Address_Type_Id" />
+    </Key>
+    <Property Name="Address_Type_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Address_Type" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Created_By_User" Type="Int32" />
+    <Property Name="Updated_By_User" Type="Int32" />
+    <Property Name="Create_Dt_Time" Type="DateTime" Precision="3" />
+    <Property Name="Update_Dt_Time" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Address_Sub_Type_Master" Relationship="FACSDBModel.FK_Address_Sub_Type_Master_Address_Type_Master" FromRole="Address_Type_Master" ToRole="Address_Sub_Type_Master" />
+  </EntityType>
+  <Association Name="FK_Address_Master_ToTable">
+    <End Type="FACSDBModel.Address_Sub_Type_Master" Role="Address_Sub_Type_Master" Multiplicity="1" />
+    <End Type="FACSDBModel.Address_Master" Role="Address_Master" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Address_Sub_Type_Master">
+        <PropertyRef Name="Address_Sub_Type_Id" />
+      </Principal>
+      <Dependent Role="Address_Master">
+        <PropertyRef Name="Address_Sub_Type" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Address_Sub_Type_Master_Address_Type_Master">
+    <End Type="FACSDBModel.Address_Type_Master" Role="Address_Type_Master" Multiplicity="1" />
+    <End Type="FACSDBModel.Address_Sub_Type_Master" Role="Address_Sub_Type_Master" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Address_Type_Master">
+        <PropertyRef Name="Address_Type_Id" />
+      </Principal>
+      <Dependent Role="Address_Sub_Type_Master">
+        <PropertyRef Name="Address_Type_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Patient_Type_Master">
+    <Key>
+      <PropertyRef Name="Patient_Type_Code" />
+    </Key>
+    <Property Name="Patient_Type_Code" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="Patient_Type" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="Created_By_User" Type="Int32" />
+    <Property Name="Updated_By_User" Type="Int32" />
+    <Property Name="Create_Dt_Time" Type="DateTime" Precision="3" />
+    <Property Name="Update_Dt_Time" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Patient_Receivables_Info" Relationship="FACSDBModel.FK_Patient_Receivables_Info_Patient_Type_Master" FromRole="Patient_Type_Master" ToRole="Patient_Receivables_Info" />
+  </EntityType>
+  <EntityType Name="Patient_Receivables_Info">
+    <Key>
+      <PropertyRef Name="Patient_Id" />
+      <PropertyRef Name="Patient_Type_Code" />
+      <PropertyRef Name="Payer_Id" />
+    </Key>
+    <Property Name="Patient_Id" Type="Int32" Nullable="false" />
+    <Property Name="Patient_Type_Code" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="Payer_Id" Type="Int32" Nullable="false" />
+    <Property Name="Created_By_User" Type="Int32" />
+    <Property Name="Updated_By_User" Type="Int32" />
+    <Property Name="Create_Dt_Time" Type="DateTime" Precision="3" />
+    <Property Name="Update_Dt_Time" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Patient_Master" Relationship="FACSDBModel.FK_Patient_Receivables_Info_Patient_master" FromRole="Patient_Receivables_Info" ToRole="Patient_Master" />
+    <NavigationProperty Name="Patient_Type_Master" Relationship="FACSDBModel.FK_Patient_Receivables_Info_Patient_Type_Master" FromRole="Patient_Receivables_Info" ToRole="Patient_Type_Master" />
+    <NavigationProperty Name="Payer_Master" Relationship="FACSDBModel.FK_Patient_Receivables_Info_Payer_Master" FromRole="Patient_Receivables_Info" ToRole="Payer_Master" />
+  </EntityType>
+  <Association Name="FK_Patient_Receivables_Info_Patient_master">
+    <End Type="FACSDBModel.Patient_Master" Role="Patient_Master" Multiplicity="1" />
+    <End Type="FACSDBModel.Patient_Receivables_Info" Role="Patient_Receivables_Info" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Patient_Master">
+        <PropertyRef Name="Patient_Id" />
+      </Principal>
+      <Dependent Role="Patient_Receivables_Info">
+        <PropertyRef Name="Patient_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Patient_Receivables_Info_Patient_Type_Master">
+    <End Type="FACSDBModel.Patient_Type_Master" Role="Patient_Type_Master" Multiplicity="1" />
+    <End Type="FACSDBModel.Patient_Receivables_Info" Role="Patient_Receivables_Info" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Patient_Type_Master">
+        <PropertyRef Name="Patient_Type_Code" />
+      </Principal>
+      <Dependent Role="Patient_Receivables_Info">
+        <PropertyRef Name="Patient_Type_Code" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Patient_Receivables_Info_Payer_Master">
+    <End Type="FACSDBModel.Payer_Master" Role="Payer_Master" Multiplicity="1" />
+    <End Type="FACSDBModel.Patient_Receivables_Info" Role="Patient_Receivables_Info" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Payer_Master">
+        <PropertyRef Name="Payer_Id" />
+      </Principal>
+      <Dependent Role="Patient_Receivables_Info">
+        <PropertyRef Name="Payer_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Patient_Treatments">
+    <Key>
+      <PropertyRef Name="Patient_Treatments_Id" />
+    </Key>
+    <Property Name="Patient_Treatments_Id" Type="Int32" Nullable="false" />
+    <Property Name="Patient_Id" Type="Int32" Nullable="false" />
+    <Property Name="Treatment_Date" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Treatment_Code" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Treatment_Description" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Total_Charges" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+    <Property Name="Created_By_User" Type="Int32" />
+    <Property Name="Updated_By_User" Type="Int32" />
+    <Property Name="Create_Dt_Time" Type="DateTime" Precision="3" />
+    <Property Name="Update_Dt_Time" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Patient_Master" Relationship="FACSDBModel.FK_Patient_Treatments_ToTable" FromRole="Patient_Treatments" ToRole="Patient_Master" />
+  </EntityType>
+  <Association Name="FK_Patient_Treatments_ToTable">
+    <End Type="FACSDBModel.Patient_Master" Role="Patient_Master" Multiplicity="1" />
+    <End Type="FACSDBModel.Patient_Treatments" Role="Patient_Treatments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Patient_Master">
+        <PropertyRef Name="Patient_Id" />
+      </Principal>
+      <Dependent Role="Patient_Treatments">
+        <PropertyRef Name="Patient_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Patient_Status">
+    <Key>
+      <PropertyRef Name="Status_Id" />
+    </Key>
+    <Property Name="Status_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Patient_Id" Type="Int32" Nullable="false" />
+    <Property Name="Collector_Id" Type="Int32" Nullable="false" />
+    <Property Name="Disposition_Id" Type="Int32" Nullable="false" />
+    <Property Name="Contact_Date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Method_Of_Contact" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Valid_Contact_Number" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Valid_Contact_Number_Type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Current_Balance" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+    <Property Name="Notes" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="IsLatest" Type="Boolean" Nullable="false" />
+    <Property Name="Created_By_User" Type="Int32" />
+    <Property Name="Updated_By_User" Type="Int32" />
+    <Property Name="Create_Dt_Time" Type="DateTime" Precision="3" />
+    <Property Name="Uppdate_Dt_Time" Type="DateTime" Precision="3" />
+    <Property Name="Last_Payment_Date" Type="DateTime" Precision="0" />
+    <Property Name="Last_Payment_Amount" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Total_Paid_Amount" Type="Decimal" Precision="19" Scale="4" />
+    <NavigationProperty Name="Contact_Master" Relationship="FACSDBModel.FK_Patient_Status_Contact_Master" FromRole="Patient_Status" ToRole="Contact_Master" />
+    <NavigationProperty Name="Disposition_Master" Relationship="FACSDBModel.FK_Patient_Status_Disposition_Master" FromRole="Patient_Status" ToRole="Disposition_Master" />
+    <NavigationProperty Name="Patient_Master" Relationship="FACSDBModel.FK_Patient_Status_Patient_Master" FromRole="Patient_Status" ToRole="Patient_Master" />
+  </EntityType>
+  <Association Name="FK_Patient_Status_Contact_Master">
+    <End Type="FACSDBModel.Contact_Master" Role="Contact_Master" Multiplicity="1" />
+    <End Type="FACSDBModel.Patient_Status" Role="Patient_Status" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Contact_Master">
+        <PropertyRef Name="Contact_Id" />
+      </Principal>
+      <Dependent Role="Patient_Status">
+        <PropertyRef Name="Collector_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Patient_Status_Disposition_Master">
+    <End Type="FACSDBModel.Disposition_Master" Role="Disposition_Master" Multiplicity="1" />
+    <End Type="FACSDBModel.Patient_Status" Role="Patient_Status" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Disposition_Master">
+        <PropertyRef Name="Disposition_Id" />
+      </Principal>
+      <Dependent Role="Patient_Status">
+        <PropertyRef Name="Disposition_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Patient_Status_Patient_Master">
+    <End Type="FACSDBModel.Patient_Master" Role="Patient_Master" Multiplicity="1" />
+    <End Type="FACSDBModel.Patient_Status" Role="Patient_Status" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Patient_Master">
+        <PropertyRef Name="Patient_Id" />
+      </Principal>
+      <Dependent Role="Patient_Status">
+        <PropertyRef Name="Patient_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Payment">
+    <Key>
+      <PropertyRef Name="Payments_Id" />
+    </Key>
+    <Property Name="Payments_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Patient_Id" Type="Int32" Nullable="false" />
+    <Property Name="Payment_Index" Type="Int32" Nullable="false" />
+    <Property Name="Payment_Type" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Payment_Amount" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+    <Property Name="Payment_Date" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Payment_Post_Date" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Payment_Details" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Created_By_User" Type="Int32" />
+    <Property Name="Updated_By_User" Type="Int32" />
+    <Property Name="Create_Dt_Time" Type="DateTime" Precision="3" />
+    <Property Name="Update_Dt_Time" Type="DateTime" Precision="3" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="Revenue" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+    <NavigationProperty Name="Patient_Master" Relationship="FACSDBModel.FK_Payments_ToTable" FromRole="Payment" ToRole="Patient_Master" />
+  </EntityType>
+  <Association Name="FK_Payments_ToTable">
+    <End Type="FACSDBModel.Patient_Master" Role="Patient_Master" Multiplicity="1" />
+    <End Type="FACSDBModel.Payment" Role="Payment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Patient_Master">
+        <PropertyRef Name="Patient_Id" />
+      </Principal>
+      <Dependent Role="Payment">
+        <PropertyRef Name="Patient_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

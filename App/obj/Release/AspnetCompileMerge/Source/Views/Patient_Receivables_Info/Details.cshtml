@@ -1,0 +1,41 @@
+﻿@model DbAccess.Patient_Receivables_Info
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Patient Receivables Info</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Patient_Master.PatientNoFromClient)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Patient_Master.PatientNoFromClient)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Patient_Type_Master.Patient_Type)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Patient_Type_Master.Patient_Type)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Payer_Master.Payer_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Payer_Master.Payer_Name)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,42 @@
+﻿@model DbAccess.User_Type_Master
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>User_Type_Master</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.User_Type)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.User_Type)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Create_Dt_Time)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Create_Dt_Time)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Update_Dt_Time)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Update_Dt_Time)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.User_Type_Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

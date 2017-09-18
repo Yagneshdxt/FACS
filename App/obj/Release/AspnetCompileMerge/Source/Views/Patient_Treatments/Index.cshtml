@@ -1,0 +1,82 @@
+﻿@model IEnumerable<DbAccess.Patient_Treatments>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create", null, htmlAttributes: new { @class = "btn btn-primary btn-lg" })
+</p>
+<div>
+    <div class="table table-responsive">
+        <table id="SpaLst">
+            <thead>
+                <tr>
+                    <th>Social Security No.</th>
+                    <th>Patient Number</th>
+                    <th>Name</th>
+                    <th>Treatment Code</th>
+                    <th>Treatment Date</th>
+                    <th>Total Charge</th>
+                    <th>Created Date</th>
+                    <th>Updated Date</th>
+                    <th></th>
+                </tr>
+            </thead>
+        </table>
+    </div>
+</div>
+@section scripts{
+    <script type="text/javascript">
+        var theGrid = null;
+        $(document).ready(function () {
+            theGrid = $("#SpaLst").DataTable({
+                "processing": true,
+                "serverSide": true,
+                "ordering": true,
+                "responsive": false,
+                "autoWidth": false,
+                "ajax": { "url": '@Url.Action("GetJsonList", "Patient_Treatments")', "type": "post", "datatype": "json" },
+                "columnDefs": [
+                    {
+                        "targets": 0,
+                        "visible": true,
+                        "searchable": true,
+                        "class": "never"
+                    },
+                    {
+                        "render": function (data, type, row) {
+                            return '<a href="@Url.Action("Edit", "Patient_Treatments")/' + row.id + '">Edit</a> | <a href="@Url.Action("Details", "Patient_Treatments")/' + row.id + '">Details</a> | <a href="@Url.Action("Delete", "Patient_Treatments")/' + row.id + '">Delete</a>';
+                        },
+                        "sortable": false,
+                        "targets": 8
+                    }
+                ],
+                "columns": [
+                       { "data": "socialSecurityNo", "autoWidth": true },
+                       { "data": "patientNoFrmClient", "autoWidth": true },
+                       { "data": "name", "autoWidth": true },
+                       { "data": "TreatmentCode", "autoWidth": true },
+                       { "data": "TreatmentDt", "autoWidth": true },
+                       { "data": "TotalCharge", "autoWidth": true },
+                       { "data": "created_at", "autoWidth": true },
+                       { "data": "updated_at", "autoWidth": true }
+                ]@*,
+                dom: 'Blfrtip',
+                buttons: [
+                    {
+                        text: 'Add new',
+                        action: function (e, dt, node, config)
+                        {
+                            //This will send the page to the location specified
+                            window.location.href = '@Url.Action("Create", "Client_Group_Master")';
+                        },
+                        className: 'btn btn-primary btn-lg'
+                    }
+                ]*@
+            });
+        });
+    </script>
+}

@@ -1,0 +1,162 @@
+﻿@model DbAccess.Contact_Master
+
+@{
+    ViewBag.Title = "Details Contact Master";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Contact Master</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Country_Code)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Country_Code)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.City_Code)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.City_Code)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Phone_1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Phone_1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Phone_2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Phone_2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Phone_3)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Phone_3)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Phone_4)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Phone_4)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Phone_5)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Phone_5)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cell_1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cell_1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cell_2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cell_2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Fax_1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fax_1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Fax_2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fax_2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email_1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email_1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email_2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email_2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Contact_Person_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Contact_Person_Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Create_Dt_Time)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Create_Dt_Time)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Update_Dt_Time)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Update_Dt_Time)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Contact_Sub_Type_Master.Contact_Sub_Type)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Contact_Sub_Type_Master.Contact_Sub_Type)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Contact_Type_Master.Contact_Type)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Contact_Type_Master.Contact_Type)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Contact_Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

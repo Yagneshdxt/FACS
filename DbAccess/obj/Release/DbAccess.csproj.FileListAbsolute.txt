@@ -1,0 +1,10 @@
+D:\Yagnesh\Sandeep Barve\FAC\Application\DbAccess\bin\Release\DbAccess.dll.config
+D:\Yagnesh\Sandeep Barve\FAC\Application\DbAccess\bin\Release\DbAccess.dll
+D:\Yagnesh\Sandeep Barve\FAC\Application\DbAccess\bin\Release\DbAccess.pdb
+D:\Yagnesh\Sandeep Barve\FAC\Application\DbAccess\bin\Release\EntityFramework.dll
+D:\Yagnesh\Sandeep Barve\FAC\Application\DbAccess\bin\Release\EntityFramework.SqlServer.dll
+D:\Yagnesh\Sandeep Barve\FAC\Application\DbAccess\bin\Release\EntityFramework.xml
+D:\Yagnesh\Sandeep Barve\FAC\Application\DbAccess\bin\Release\EntityFramework.SqlServer.xml
+D:\Yagnesh\Sandeep Barve\FAC\Application\DbAccess\obj\Release\DbAccess.csprojResolveAssemblyReference.cache
+D:\Yagnesh\Sandeep Barve\FAC\Application\DbAccess\obj\Release\DbAccess.dll
+D:\Yagnesh\Sandeep Barve\FAC\Application\DbAccess\obj\Release\DbAccess.pdb

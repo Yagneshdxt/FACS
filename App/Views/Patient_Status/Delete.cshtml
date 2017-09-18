@@ -1,0 +1,128 @@
+﻿@model DbAccess.Patient_Status
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Patient_Status</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Collector_Id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Collector_Id)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Contact_Date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Contact_Date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Method_Of_Contact)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Method_Of_Contact)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Valid_Contact_Number)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Valid_Contact_Number)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Valid_Contact_Number_Type)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Valid_Contact_Number_Type)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Current_Balance)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Current_Balance)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Notes)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Notes)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsLatest)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsLatest)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Last_Payment_Date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Last_Payment_Date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Last_Payment_Amount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Last_Payment_Amount)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Total_Paid_Amount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Total_Paid_Amount)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Disposition_Master.Disposition)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Disposition_Master.Disposition)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Patient_Master.PatientNoFromClient)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Patient_Master.PatientNoFromClient)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>
